@@ -1,0 +1,163 @@
+<meta charset="UTF-8"></meta>
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0">
+</meta>
+
+<style>table, th, td {   border: 1px solid black; }</style>
+
+<title>PEDSnet Codeset Library</title>
+
+<link
+  href="style.css"
+  rel="stylesheet"
+  type="text/css"
+  title="Cool stylesheet">
+</link>
+
+<h1>Introduction</h1>
+
+<p>
+  This site links researchers with the various codesets developed by the PEDSnet team for
+  identifying patient cohorts, treatments or outcomes in our database.  We are making them available
+  here for both potential collaborators and outside researchers whose work can benefit from what we
+  have already done.
+</p>
+
+<p>
+  The codesets are based on the
+
+  <i>Common Data Model</i>
+
+  as described
+
+  <a href="https://github.com/PEDSnet/data_science_training/blob/master/reading_materials/session_1/ETL Conventions for use with PEDSnet CDM v3.2 OMOP V5.2.pdf">
+    here
+  </a>
+
+  . The exception is the “Query Logic” group which contains R files that draw on the codesets   and
+  implement other logic and   calculations.
+</p>
+
+<p>
+  Usually codesets will be of the “
+
+  <i>iccc</i>
+
+  ” form,
+
+  <i>integer concept_id</i>
+
+  and three text fields:
+
+  <i>concept_code</i>
+
+  ,
+
+  <i>concept_name</i>
+
+  , and
+
+  <i>vocabulary_id</i>
+
+  .  Note that for labs done, the performance of the lab may be listed as a Procedure, but the
+  results of the lab may be listed as a Measurement.
+</p>
+
+<p>Please contact us at [Email goes here] if you wish to:</p>
+
+<ul>
+  <li>Ask about a codeset you can’t find or understand</li>
+
+  <li>Suggest revisions of a codeset</li>
+
+  <li>Send us a proposed new codeset</li>
+
+  <li>Collaborate in some other way with PEDSnet research</li>
+</ul>
+
+<p></p>
+
+<h1>Codeset Groupings</h1>
+
+<div id="root"></div>
+
+<table style="width:100%">
+  <tbody>
+    <tr><th>Group</th><th>Brief Description</th><th>Vocabularies Typically Used</th></tr>
+
+    <tr>
+      <td>Conditions</td>
+
+      <td>Diagnoses of interest in the<i>condition_occurrence</i>table</td>
+
+      <td>
+        SNOMED for searching on
+
+        <i>condition_concept_id</i>
+
+        , ICD 9 and ICD10 for searching on
+
+        <i>condition_source_concept_id</i>
+
+        . The Nebraska Lexicon is not used.
+      </td>
+    </tr>
+
+    <tr>
+      <td>Drugs</td>
+
+      <td>Diagnoses of interest in the<i>drug_exposure</i>table</td>
+
+      <td>
+        RxNorm for searching on
+
+        <i>drug_concept_id</i>
+
+        or, if necessary, on
+
+        <i>drug_source_concept_id</i>
+      </td>
+    </tr>
+
+    <tr>
+      <td>Procedures, including labs performed</td>
+
+      <td>
+        Specific procedures, including diagnostic tests, performed on a patient as described in the
+
+        <i>procedure_occurrence</i>
+
+        table
+      </td>
+
+      <td>CPT4, HCPCS, ICD9Proc, ICD10Proc</td>
+    </tr>
+
+    <tr>
+      <td>Measurements, including lab results</td>
+
+      <td>
+        Specific measurements of interest as described in the
+
+        <i>measurements</i>
+
+        table.  Querying measurments should also check units.
+      </td>
+
+      <td>CPT4, HCPCS, ICD9Proc, ICD10Proc</td>
+    </tr>
+
+    <tr>
+      <td>Query code</td>
+      <td>R or SQL code developed and tested to extract specific estimates (such as Z-scores or estimated Glomerular Flow Rate) or phenotypes (such as Glomerular Disease)</td>
+      <td>Not applicable</td>
+
+
+    <script
+      src="main.js"
+      type="text/javascript">
+    </script>
+  </tbody>
+</table>
