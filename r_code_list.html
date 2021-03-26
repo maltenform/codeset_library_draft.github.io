@@ -1,0 +1,51 @@
+<style>table, th, td {   border: 1px solid black; }</style>
+
+<table style="width:100%">
+  <tbody>
+    <tr>
+      <th>Codeset name</th>
+
+      <th>Brief Description</th>
+
+      <th>Date Implemented</th>
+
+      <th>Last Updated</th>
+
+      <th>Notes on Usage</th>
+    </tr>
+  </tbody>
+
+  <tbody>
+    <tr>
+      <td>glean_nephrotic_subcohort</td>
+
+      <td>
+        Patients in GLEAN cohort who have more nephrotic syndrome diagnoses than nephritis diagnoses
+      </td>
+    </tr>
+
+    <tr>
+      <td>kidney_biopsy</td>
+
+      <td>
+        Kidney biopsy is identified through one of the following approaches:
+        <ul>
+        <li> Procedure code for kidney biopsy</li>
+        <li> Procedure code associated with biopsy (renal not specified), accompanied by source value string search for kidney/renal/kidney biopsy ICD code or kidney finding condition code on same date</li>
+        <li> Condition code for kidney biopsy</li>
+        <li> Condition code for biopsy result (renal not specified), accompanied by kidney finding condition code on same date</li>
+        <li>String search for kidney/renal biopsy in visit source value</li>
+      </td>
+    </tr>
+
+    <td>egfr</td>
+
+    <td>
+      calculate estimated Glomerular Flow Rate (eGFR) from serum creatinine measurements and height using Schwarz bedside equation
+    </td>
+  </tr>
+
+  </tbody>
+</table>
+
+<a href="index.html">Return to Index</a>
